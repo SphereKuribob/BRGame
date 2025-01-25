@@ -13,22 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Create a div to display coordinates
-    const coordDiv = document.createElement('div');
-    coordDiv.style.position = 'fixed';
-    coordDiv.style.top = '10px';
-    coordDiv.style.left = '10px';
-    coordDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    coordDiv.style.color = 'white';
-    coordDiv.style.padding = '5px';
-    coordDiv.style.zIndex = '10000';
-    document.body.appendChild(coordDiv);
-
-    // Update coordinates on mouse move
-    document.addEventListener('mousemove', function(event) {
-        coordDiv.textContent = `X: ${event.pageX}, Y: ${event.pageY}`;
-    });
-
     const positions = [
         { left: '825px', top: '82px' },   // Position 1
         { left: '604px', top: '138px' }, // Position 2
@@ -41,13 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const dracImg = document.querySelector('.dracImg');
     const scoreTally = document.getElementById('scoreTally');
     const timeTally = document.getElementById('timeTally'); 
+    const hardEnable = localStorage.getItem('hardEnable') === 'true';
 
     /*score variable*/
     let score = 0;
 
     /*time variable*/
-    let timeVal = 60;
-    let timeMax = 60;
+    let timeVal = 30;
+    let timeMax = 30;
+
+    if(hardEnable) {
+        timeval = 2;
+        timeMax = 2;
+    }
 
     /*drac variables*/
     let currentDracPosition = positions[0];
@@ -72,7 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if(timeVal <= 0) {
                 clearInterval(timeInterval);
-                window.location.href = './help.html';
+                const audioTwo = document.getElementById('goSound');
+                audioTwo.volume = 0.2;
+                audioTwo.play();
+                audio.volume = 0.0;
+                hideAllButtons();
+                localStorage.setItem('score', score);
+                setTimeout(() => {
+                    window.location.href = './endScreen.html';
+                }, 4500); 
+                
             }
         }, 1000);
     }
@@ -80,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetTimer() {
         clearInterval(timeInterval);
         
-        if(score >= 55) {
+        if(score >= 25) {
             timeVal = 3;
-        }else if(score % 5 === 0) {
-            timeVal = Math.max(60 -score, 3);
+        }else if(score % 5 === 0 && !hardEnable) {
+            timeVal = Math.max(30 -score, 3);
             timeMax = timeVal;
         }else {
             timeVal = timeMax;
@@ -116,12 +115,21 @@ document.addEventListener('DOMContentLoaded', () => {
            resetTimer();
 
         } else {
-            // Incorrect guess: redirect to game over page
-            window.location.href = './help.html';
+         
+            const audioThree = document.getElementById('goSound');
+            audioThree.volume = 0.2;
+            audioThree.play();
+            audio.volume = 0.0;
+            hideAllButtons();
+            clearInterval(timeInterval);
+            localStorage.setItem('score', score);
+            setTimeout(() => {
+                window.location.href = './endScreen.html';
+            }, 4500); 
         }
     }
 
-    // Attach event listeners to buttons
+    
     document.querySelector('#safeOne').addEventListener('click', () => handleButtonClick('safeOne'));
     document.querySelector('#safeTwo').addEventListener('click', () => handleButtonClick('safeTwo'));
     document.querySelector('#safeThree').addEventListener('click', () => handleButtonClick('safeThree'));
@@ -132,4 +140,51 @@ document.addEventListener('DOMContentLoaded', () => {
     timeStart();
 
 
+    window.onload = () => {
+      
+        
+        score = 0;
+
+        timeVal = 30;
+
+        if(hardEnable) {
+            timeVal = 2;
+        }
+    
+       
+        document.getElementById('scoreTally').innerHTML = `<h1>${score}</h1>`;
+        document.getElementById('timeTally').innerHTML = `<h1>${timeVal}</h1>`;
+    };
+
+    function hideAllButtons() {
+        const buttons = document.querySelectorAll('button'); 
+        buttons.forEach(button => {
+            button.style.display = 'none'; 
+        });
+    }
+     /*Mute button logic*/
+
+     const sound = document.getElementById('sound');
+     let soundCount = 0;
+ 
+     sound.addEventListener('click', () => {
+         soundCount++;
+        
+         if (soundCount % 2 !== 0) {
+             audio.volume = 0;
+             sound.style.backgroundImage = "url('./images/soundOff.png')";
+         } else {
+             audio.volume = 0.2;
+             sound.style.backgroundImage = "url('./images/soundOn.png')";
+         }
+     });
+ 
+     if (soundCount % 2 !== 0) {
+         audio.volume = 0;
+         sound.style.backgroundImage = "url('./images/soundOff.png')";
+     } else {
+         audio.volume = 0.2;
+         sound.style.backgroundImage = "url('./images/soundOn.png')";
+     }
+ 
 });

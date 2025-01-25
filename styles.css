@@ -11,7 +11,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent scrollbars */
+  overflow: hidden; 
   width: 100vw;
   height: 100vh;
 }
@@ -22,23 +22,23 @@ html, body {
   background-color: #a7a86e;
 }
 
-/* Scrolling container: Contains two images side by side */
+
 .scrolling-container {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%; /*Double view for 2 images */
+  width: 200%; 
   height: 100vh; 
   display: flex; 
-  animation: scroll 10s linear infinite; /* Scroll animation */
+  animation: scroll 10s linear infinite; 
 }
 
-/* Scrolling image: Each div holds the same image */
+
 .scrolling-image {
   width: 100vw; 
   height: 100vh; 
   background-image: url(./images/title.png); 
-  filter: saturate(75%); /* Reduces saturation to 50% */
+  filter: saturate(75%); 
 }
 
 .foreground-text {
@@ -50,8 +50,8 @@ html, body {
   color: #e96ce3;
   font-family: Arial, sans-serif;
   text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.7);
-  -webkit-text-stroke: 3.5px black; /* Outline with 2px width and black color */
-  text-stroke: 3.5px black; /* For compatibility with non-WebKit browsers */
+  -webkit-text-stroke: 3.5px black; 
+  text-stroke: 3.5px black; 
 }
 
 .foreground-text h1 {
@@ -72,7 +72,7 @@ html, body {
   left: 15%;
 }
 
-.playButton, .helpButton, button {
+.playButton button, .helpButton button {
   border:solid;
   border-radius: 3cm;
   border-color: #c2783c;
@@ -84,8 +84,7 @@ html, body {
   background-color:  #8B008B
 }
 
-.playButton, .helpButton, button:hover {
-  box-shadow: 0 0px 10px 0 #63b199;
+.playButton button:hover, .helpButton button:hover, .hardButton button:hover{
   background-color:  #c23ac2;
   color: #84a77b;
 }
@@ -96,12 +95,61 @@ html, body {
   left: 60%;
 }
 
-/* Keyframes for infinite scroll */
+.hardButton {
+  position: absolute;
+  top: 5vh;
+  left: 87vw;
+}
+
+.hardButton button {
+  border:solid;
+  border-radius: 3cm;
+  border-color: #c2783c;
+  font-size: 5rem;
+  color:#6eaa5e;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  background-color:  #8B008B;
+  width: 210px;
+  height: 210px;
+  text-align: center;
+
+}
+
+
 @keyframes scroll {
   from {
-    transform: translateX(0); /* Start at 0 */
+    transform: translateX(0); 
   }
   to {
-    transform: translateX(-50%); /*Move to the end of the images */
+    transform: translateX(-50%); 
   }
+}
+
+#hard {
+  visibility: hidden; 
+}
+
+.soundButton {
+  position: absolute; /* Or position: fixed; */
+  top: 5vh;  /* Adjust the position based on where you want it */
+  left: 2vw;  /* Adjust the position */
+  z-index: 10;
+}
+
+#sound {
+  background-image: url('./images/soundOn.png');
+  background-size: cover; /* Ensures the image covers the button */
+  width: 200px;  /* Adjust the size of the button */
+  height: 200px;  /* Adjust the size of the button */
+  border: none;  /* Optional: remove button border */
+  background-color: #8B008B;
+  border:solid;
+  border-radius: 3cm;
+  border-color: #c2783c;
+  color:#6eaa5e;
+}
+
+#sound:hover {
+  background-color:  #c23ac2;
+  color: #84a77b;
 }
