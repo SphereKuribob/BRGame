@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     hardMode.addEventListener('click', () => {
-        const audioTwo = new Audio('./audio/pause.mp3');
+        const audioTwo = new Audio('./audio/pause.MP3');
         audioTwo.volume = 0.2;
         audioTwo.play();
         count ++;
