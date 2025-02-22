@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url(./fonts/normal.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'CustomFont2';
+    src: url(./fonts/brad.ttf) format('truetype');
+  }
+
+  body {
+    background-color: #c5af67;
+  }
+
+.bgImage {
+    width: 100%; 
+    height: 100%; 
+    background-image: url(./images/gameover.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 0;
+    padding:0;
+    position: absolute;
+    z-index: 0;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  #batGif img {
+    position: absolute;
+    left: 500px;
+    top: 547px;
+    z-index: 1;
+    visibility: hidden;
+  }
+
+  #batGif2 img {
+    position: absolute;
+    left: 500px;
+    top: 647px;
+    z-index: 1;
+    visibility: hidden;
+  }
+
+  #batGif3 img {
+    position: absolute;
+    left: 500px;
+    top: 747px;
+    z-index: 1;
+    visibility: hidden;
+  }
+
+  #continue button {
+    position: absolute;
+    left: 665px;
+    top: 575px;
+    height: 75px;
+    width: 700px;
+    z-index: 1;
+  }
+
+  #title button {
+    position: absolute;
+    left: 665px;
+    top: 675px;
+    height: 75px;
+    width: 700px;
+    z-index: 1;
+  }
+
+  #help button {
+    position: absolute;
+    left: 665px;
+    top: 775px;
+    height: 75px;
+    width: 700px;
+    z-index: 1;
+  }
+
+ button {
+    opacity: 0;
+ }
+
+ #show h1 {
+    font-family: 'CustomFont2', Arial, sans-serif;
+    font-size: 7rem;
+    z-index: 5;
+  }
+
+  #show {
+    position: absolute;
+    left: 1100px;
+    top: 240px;
+  }
+
+  #high h1 {
+    font-family: 'CustomFont2', Arial, sans-serif;
+    font-size: 7rem;
+    z-index: 5;
+  }
+
+  #high {
+    position: absolute;
+    left: 1100px;
+    top: 120px;
+  }
+
+  #mode h1 {
+    font-family: 'CustomFont2', Arial, sans-serif;
+    font-size: 6rem;
+    z-index: 5;
+  }
+
+  #mode {
+    position: absolute;
+    left: 1100px;
+    top: 370px;
+  }
+  
+
+  
+
+  

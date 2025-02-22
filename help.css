@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url(./fonts/normal.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'CustomFont2';
+    src: url(./fonts/brad.ttf) format('truetype');
+  }
+
+  body {
+    background-color: #c5af67;
+  }
+
+
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+
+.helpBG {
+    width: 100%; 
+    height: 110%; 
+    background-image: url(./images/helpBG.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 0;
+    padding:0;
+    position: absolute;
+    z-index: 0;
+  }
+
+  #posCon {
+    display: grid;
+    position: absolute;
+    left: 25.2%;
+    top:17.5%;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 10px; 
+    width: 50%; 
+    z-index: 5;
+}
+
+#posCon img {
+    width: 100%; 
+    height: 100%; 
+    z-index: 5;
+}
+
+#top h1 {
+  position: absolute;
+  z-index: 6;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  color:rgb(247, 142, 220);
+  left: 35%;
+  margin: 0;
+  top: 2.8%;
+  font-size: 4rem;
+  text-align: center;
+}
+
+#bot h1 {
+  position: absolute;
+  z-index: 6;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  color:rgb(235, 168, 92);
+  left: 20%;
+  margin: 0;
+  top: 81%;
+  font-size: 4rem;
+  text-align: center;
+  text-shadow: 
+  -2px -2px 0 #000, 
+  2px -2px 0 #000, 
+  -2px 2px 0 #000, 
+  2px 2px 0 #000;  
+
+}
+
+#return button {
+  border:solid;
+  border-radius: 3cm;
+  border-color: #c2783c;
+  width: 500px;
+  height: 100px;
+  font-size: 6rem;
+  color:#aedda1;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  background-color:  #9c6d9c;
+
+  position: absolute;
+  z-index: 7;
+
+  left: 35.5%;
+  top: 88%;
+}
+
+#return button:hover {
+  box-shadow: 0 0px 10px 0 #63b199;
+  background-color:  #c23ac2;
+  color: #84a77b;
+}

@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url(./fonts/normal.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'CustomFont2';
+    src: url(./fonts/brad.ttf) format('truetype');
+  }
+
+  body {
+    background-color: #c5af67;
+  }
+
+.gameImg {
+    width: 100%; 
+    height: 100%; 
+    background-image: url(./images/throneColor.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 0;
+    padding:0;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .timeImg {
+    position: absolute;
+    top: 50%;
+    left: 77.7%;
+    z-index: -1;
+  }
+
+  .scoreImg {
+   
+
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    z-index: -1;
+  }
+
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .foregroundText {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #e96ce3;
+    font-family: Arial, sans-serif;
+    text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.7);
+    -webkit-text-stroke: 3.5px black; 
+    text-stroke: 3.5px black; 
+    z-index: 1;
+  }
+
+  .foregroundText h1 {
+    font-family: 'CustomFont2', Arial, sans-serif;
+    font-size: 6rem;
+    margin: 0;
+    z-index: 0;
+  }
+
+  .safeOne {
+    position: absolute;
+    left: 960px; /* X-coordinate */
+    top: 730px;  /* Y-coordinate */
+    z-index: 4;
+  }
+  
+  .safeTwo {
+    position: absolute;
+    left: 1178px; /* X-coordinate */
+    top: 675px;  /* Y-coordinate */
+    z-index: 4;
+  }
+
+  .safeThree {
+    position: absolute;
+    left: 1341px; /* X-coordinate */
+    top: 513px;  /* Y-coordinate */
+    z-index: 4;
+  }
+
+  .safeFour {
+    position: absolute;
+    left: 691.9px; /* X-coordinate */
+    top: 405px;  /* Y-coordinate */
+    z-index: 4;
+  }
+
+ 
+  .safeFive {
+    position: absolute;
+    left: 638px; /* X-coordinate */
+    top: 675px;  /* Y-coordinate */
+    z-index: 4;
+  }
+
+  .safeOne, .safeTwo , .safeThree, .safeFour, .safeFive, button {
+    height:50px;
+    width: 100px;
+    background-color: #68b295;
+    color: #eadaa4;
+    font-size: 3rem;
+    border:solid;
+    border-color:#1f4810;
+    position:absolute;
+    font-family: 'CustomFont2', Arial, sans-serif;
+  }
+
+  .safeOne, .safeTwo , .safeThree, .safeFour, .safeFive, .safeSix, button:hover {
+    box-shadow: 0 0px 10px 0 #63b199;
+    background-color:  #c23ac2;
+    color: #84a77b;
+  }
+
+  .dracImg{
+    position: absolute;
+    left: 825px;
+    top: 82px;
+    transform: scale(0.75);
+  }
+
+  #scoreTally h1 {
+    font-family: 'CustomFont2', Arial, sans-serif;
+    font-size: 7rem;
+    z-index: 5;
+  }
+
+  #scoreTally {
+    position: absolute;
+    left: 310px;
+    top: 376px;
+    z-index: 5;
+  }
+
+  #timeTally h1 {
+    font-family: 'CustomFont2', Arial, sans-serif;
+    font-size: 7rem;
+    z-index: 5;
+  }
+
+  #timeTally {
+    position: absolute;
+    left: 1710px;
+    top: 376px;
+    z-index: 5;
+  }
+
+  #sound {
+    background-image: url('./images/soundOn.png');
+    background-size: cover; /* Ensures the image covers the button */
+    width: 180px;  /* Adjust the size of the button */
+    height: 180px;  /* Adjust the size of the button */
+    border: none;  /* Optional: remove button border */
+    background-color: #8B008B;
+    border:solid;
+    border-radius: 3cm;
+    border-color: #c2783c;
+    color:#6eaa5e;
+    z-index: 10;
+  }
+  
+  #sound:hover {
+    background-color:  #c23ac2;
+    color: #84a77b;
+  }
+
+  
+
+
+  

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Screen</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="resolution/size.css">
+    <script defer src="resolution/size.js"></script>
+</head>
+<body>
+    <div class = "ui">
+        <div class="scrolling-container">
+            <div class="scrolling-image image1"></div>
+            <div class="scrolling-image image2"></div>
+        </div>    
+
+        <div class="foreground-text">
+            <h1>Dracula's Relentless Rando</h1>
+            <p>Can you save him?</p>
+        </div>
+
+        <div class ="playButton">
+            <button type ="button" id ="player">Play</button>
+        </div>
+
+        <div class ="helpButton">
+        <button type ="button" id ="helper">Help</button>
+        </div>
+
+        <div class ="hardButton">
+            <button type ="button" id ="hard">Hard: No</button>
+        </div>
+
+        <div class ="altButton">
+            <button type ="button" id ="alt">Time Attack: No</button>
+        </div>
+
+        <div class = "soundButton"><button type ="button" id = "sound"></button> </div>
+
+        <audio id="playSound" src="./audio/start.mp3"></audio>
+        <audio id="road" src ="./audio/road.mp3" autoplay loop></audio>
+    </div>
+</body>
+</html>

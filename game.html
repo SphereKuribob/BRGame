@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gameStyle.css">
+    <script defer src="gameScript.js"></script>
+    <link rel="stylesheet" href="resolution/size.css">
+    <script defer src="resolution/size.js"></script>
+    <title>Game</title>
+</head>
+<body>
+    <div class = "ui">
+        <div class = "foregroundText">
+            <h1>Where should Christopher go?</h1>
+        </div>
+        <div class ="gameImg">
+        <div class = "scoreImg"> <img src ="./images/scoreBar2.png"></div>
+        <div class = "timeImg"><img src="./images/timeBar.png"></div>
+        <div class = "drac"><img class ="dracImg" src ="./images/drac.png"></div>
+
+        <div class ="scoreTally" id ="scoreTally"><h1>0</h1></div>
+        <div class ="timeTally" id = "timeTally"><h1>60</h1></div>
+
+
+        <div class="safeOne">
+            <button type="button" id="safeOne" name="safeOne">1</button>
+        </div>
+        <div class="safeTwo">
+            <button type="button" id="safeTwo" name="safeTwo">2</button>
+        </div>
+        <div class="safeThree">
+            <button type="button" id="safeThree" name="safeThree">3</button>
+        </div>
+        <div class="safeFour">
+            <button type="button" id="safeFour" name="safeFour">4</button>
+        </div>
+        <div class="safeFive">
+            <button type="button" id="safeFive" name="safeFive">5</button>
+        </div>
+
+        <div class = "soundButton"><button type ="button" id = "sound"></button> </div>
+
+        <audio id="backgroundMusic" src="./audio/satan.mp3" autoplay loop>
+        </audio>
+        <audio id ="goSound" src ="./audio/goSound.mp3"></audio>
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url(./fonts/normal.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'CustomFont2';
+  src: url(./fonts/brad.ttf) format('truetype');
+}
+
+
+html, body {
+
+
+  overflow: hidden; 
+  width: 100%;
+  height: 100%;
+}
+
+ body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #a7a86e;
+  position: relative;
+}
+
+
+.scrolling-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%; 
+  height: 100%; 
+  display: flex; 
+  animation: scroll 10s linear infinite; 
+}
+
+
+.scrolling-image {
+  width: 100%; 
+  height: 100%; 
+  background-image: url(./images/title.png); 
+  filter: saturate(75%); 
+}
+
+.foreground-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #e96ce3;
+  font-family: Arial, sans-serif;
+  text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.7);
+  -webkit-text-stroke: 3.5px black; 
+  text-stroke: 3.5px black; 
+}
+
+.foreground-text h1 {
+  font-family: 'CustomFont', Arial, sans-serif;
+  font-size: 6rem;
+  margin: 0;
+}
+
+.foreground-text p {
+  font-family: 'CustomFont', Arial, sans-serif;
+  font-size: 5rem;
+  margin: 10px 0 0;
+}
+
+.playButton {
+  position: absolute;
+  top: 60%;
+  left: 15%;
+}
+
+.playButton button, .helpButton button {
+  border:solid;
+  border-radius: 3ems;
+  border-color: #c2783c;
+  width: 500px;
+  height: 250px;
+  font-size: 6rem;
+  color:#6eaa5e;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  background-color:  #8B008B
+}
+
+.hardButton button, .altButton button {
+  border:solid;
+  border-radius: 3ems;
+  border-color: #c2783c;
+  font-size: 5rem;
+  color:#6eaa5e;
+  font-family: 'CustomFont2', Arial, sans-serif;
+  background-color:  #8B008B;
+  width: 210px;
+  height: 210px;
+  text-align: center;
+
+}
+
+.altButton button {
+  font-size: 4rem;
+}
+
+.playButton button:hover, .helpButton button:hover, .hardButton button:hover, .altButton button:hover {
+  background-color:  #c23ac2;
+  color: #84a77b;
+}
+
+.helpButton {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+}
+
+.hardButton {
+  position: absolute;
+  top: 35%;
+  left: 87%;
+  font-size: 5rem;
+}
+
+.altButton {
+  position: absolute;
+  top: 5%;
+  left: 87%;
+}
+
+
+
+
+@keyframes scroll {
+  from {
+    transform: translateX(0); 
+  }
+  to {
+    transform: translateX(-50%); 
+  }
+}
+
+#hard {
+  visibility: hidden; 
+}
+
+.soundButton {
+  position: absolute; /* Or position: fixed; */
+  top: 5%;  /* Adjust the position based on where you want it */
+  left: 2%;  /* Adjust the position */
+  z-index: 10;
+}
+
+#sound {
+  background-image: url('./images/soundOn.png');
+  background-size: cover; /* Ensures the image covers the button */
+  width: 200px;  /* Adjust the size of the button */
+  height: 200px;  /* Adjust the size of the button */
+  border: none;  /* Optional: remove button border */
+  background-color: #8B008B;
+  border:solid;
+  border-radius: 3ems;
+  border-color: #c2783c;
+  color:#6eaa5e;
+}
+
+#sound:hover {
+  background-color:  #c23ac2;
+  color: #84a77b;
+}
+

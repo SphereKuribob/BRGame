@@ -1,0 +1,15 @@
+:root {
+    --width: 1915;
+    --height: 920;
+  }
+
+.ui {
+    position: absolute;
+    inset: 50% 0 0 50%;
+    width: calc(var(--width) * 1px);
+    height: calc(var(--height) * 1px);
+      transform: translate(-50%, -50%) scale(var(--scale, 0));
+    box-sizing: border-box;
+      z-index: 10;
+  }
+  
